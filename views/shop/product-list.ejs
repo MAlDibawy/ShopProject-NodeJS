@@ -1,0 +1,19 @@
+<%- include('../includes/header.ejs') %>
+
+<body>
+    <%- include('../includes/navbar.ejs') %>
+
+    <main>
+        <h2>Products</h2>
+        <% if(products.length > 0) { %>
+        <ul>
+            <% products.forEach((product) => { %>
+            <li> <%= product.title %></li>
+            <% }); %>
+        </ul>
+        <% } else { %>
+        <h3>No Available Products</h3>
+        <% } %>
+    </main>
+
+    <%- include('../includes/footer.ejs') %>
