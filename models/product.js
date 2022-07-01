@@ -8,9 +8,14 @@ module.exports = class Product {
         this.price = price;
     }
     save() {
+        this.id = Math.random().toString();
         products.push(this);
     }
     static fetshAll() {
         return products;
+    }
+    static findByID(id, callback) {
+        const product = products.find(p => p.id === id);
+        callback(product);
     }
 }
