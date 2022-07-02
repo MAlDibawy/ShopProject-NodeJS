@@ -1,4 +1,4 @@
-const products = [];
+var products = [];
 
 module.exports = class Product {
     constructor(title, imageURL, description, price) {
@@ -17,5 +17,12 @@ module.exports = class Product {
     static findByID(id, callback) {
         const product = products.find(p => p.id === id);
         callback(product);
+    }
+    static updateProduct(id, title, imageURL, description, price) {
+        const productIndex = products.findIndex(prod => prod.id === id);
+        products[productIndex].imageURL = imageURL;
+        products[productIndex].title = title;
+        products[productIndex].description = description;
+        products[productIndex].price = price;
     }
 }
