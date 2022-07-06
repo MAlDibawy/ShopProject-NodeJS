@@ -9,6 +9,13 @@ module.exports = class Cart {
         this.products.push(product);
         this.numOfProducts = this.numberOfProducts + 1;
         this.totalPrice = this.totalPrice + product.price;
-        console.log(this.products);
+    }
+    removeProduct(productID, productPrice) {
+        this.totalPrice = this.totalPrice - productPrice;
+        this.numOfProducts = this.numberOfProducts - 1;
+        this.products = this.products.filter(product => product.id !== productID);
+    }
+    getProducts() {
+        return this.products;
     }
 }
