@@ -1,4 +1,6 @@
-const Sequelize = require('sequelize');
+const {
+    Sequelize
+} = require('sequelize');
 
 const sequelize = new Sequelize('shop_db', 'root', 'Mdibawy1997_+', {
     dialect: 'mysql',
