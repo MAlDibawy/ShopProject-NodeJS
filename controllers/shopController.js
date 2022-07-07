@@ -16,19 +16,18 @@ exports.getProducts = (req, res, next) => {
 };
 
 exports.getProductByID = (req, res, next) => {
-    const pID = req.params.product_id;
+    console.log(req.params);
+    const pID = req.params.productID;
     Product.findByPk(pID)
         .then(product => {
             res.render('shop/product-detail', {
                 product: product,
                 pageTitle: product.title,
                 path: '/products'
-            })
-        }).catch(err => {
-            console.log(err);
-        });
+            });
+        })
+        .catch(err => console.log(err));
 }
-
 
 exports.getHomePage = (req, res, next) => {
     Product.findAll().then(products => {
