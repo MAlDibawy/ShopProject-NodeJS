@@ -42,12 +42,18 @@ exports.getHomePage = (req, res, next) => {
 }
 
 exports.getCart = (req, res, next) => {
-    const cartProducts = cart.getProducts();
-    res.render('shop/cart', {
-        path: '/cart',
-        pageTitle: 'Cart',
-        products: cartProducts
-    });
+    req.user
+        .getCart()
+        .then(cart => {
+            console.log(cart);
+        })
+        .catch(err => console.log(err));
+    // const cartProducts = cart.getProducts();
+    // res.render('shop/cart', {
+    //     path: '/cart',
+    //     pageTitle: 'Cart',
+    //     products: cartProducts
+    // });
 }
 
 exports.postCart = (req, res, next) => {
