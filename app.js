@@ -36,6 +36,7 @@ app.use((req, res, next) => {
     });
 });
 
+//adding DB relations
 Product.belongsTo(User);
 User.hasMany(Product);
 User.hasOne(Cart);
