@@ -22,6 +22,6 @@
     margin-bottom: 0.5rem;
 }
 
-.product__description {
+.product__description, .product__qty {
     text-align: center;
 }
